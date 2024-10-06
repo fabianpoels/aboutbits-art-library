@@ -58,6 +58,9 @@ export default function TablePagination({
     return href
   }
 
+  const from = pagination.offset + 1
+  const to = Math.min(pagination.offset + pagination.limit, pagination.total || pagination.offset + pagination.limit )
+
   return (
     <nav
       className="flex items-center flex-column flex-wrap md:flex-row justify-between pt-6"
@@ -66,7 +69,7 @@ export default function TablePagination({
       <span className="text-sm font-normal text-gray-500 mb-4 md:mb-0 block w-full md:inline md:w-auto">
         Showing{' '}
         <span className="font-semibold text-gray-900">
-          {pagination.offset + 1}-{pagination.offset + pagination.limit}
+          {from}-{to}
         </span>{' '}
         of <span className="font-semibold text-gray-900">{pagination.total}</span>
       </span>
@@ -90,7 +93,6 @@ export default function TablePagination({
         <li>
           <Link
             className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
-            // disabled={pagination.current_page === pagination.total_pages}
             href={getHref(pagination.current_page + 1)}
           >
             Next
