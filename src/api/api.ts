@@ -1,7 +1,8 @@
 import Artwork from '@/types/artwork'
 import ArtworkResponse from '@/types/artworkResponse'
 
-const ART_API_URL = 'https://api.artic.edu/api/v1'
+const ART_API_URL = process.env.ART_API_URL
+// const ART_API_URL = 'https://api.artic.edu/api/v1'
 const minimalFields = 'id,title,artist_title,place_of_origin'
 const allFields = `${minimalFields},date_start,dimensions,medium_display,department_title,artwork_type_title,image_id`
 
