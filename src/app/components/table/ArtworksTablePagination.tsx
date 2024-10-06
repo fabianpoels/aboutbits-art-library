@@ -59,7 +59,10 @@ export default function TablePagination({
   }
 
   const from = pagination.offset + 1
-  const to = Math.min(pagination.offset + pagination.limit, pagination.total || pagination.offset + pagination.limit )
+  const to = Math.min(
+    pagination.offset + pagination.limit,
+    pagination.total || pagination.offset + pagination.limit
+  )
 
   return (
     <nav
