@@ -11,7 +11,12 @@
 
 ## Getting Started
 
-First, install the dependencies with your favorite package manager
+First, copy the the example `.env.example` file
+```bash
+cp .env.example .env
+```
+
+Install the dependencies with your favorite package manager
 
 ```bash
 npm install
